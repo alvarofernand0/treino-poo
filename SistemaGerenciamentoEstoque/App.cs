@@ -9,8 +9,6 @@ public class App
     {
         var gerenciamentoEstoque = new GerenciamentoEstoque();
 
-        var produto = new Produto(1, "Nome", "Este é um produto", 309.98m, 10);
-
         while (true)
         {
             Console.Clear();
@@ -32,22 +30,22 @@ public class App
                     gerenciamentoEstoque.CriarProduto();
                     break;
                 case "2":
-                    gerenciamentoEstoque.CriarProduto();
+                    gerenciamentoEstoque.ListarProdutos();
                     break;
                 case "3":
-                    gerenciamentoEstoque.CriarProduto();
+                    gerenciamentoEstoque.BuscarProdutoPorId();
                     break;
                 case "4":
-                    gerenciamentoEstoque.CriarProduto();
+                    gerenciamentoEstoque.AtualizarProduto();
                     break;
                 case "5":
-                    gerenciamentoEstoque.CriarProduto();
+                    gerenciamentoEstoque.RemoverProduto();
                     break;
                 case "6":
-                    gerenciamentoEstoque.CriarProduto();
+                    gerenciamentoEstoque.RegistrarEntradaEstoque();
                     break;
                 case "7":
-                    gerenciamentoEstoque.CriarProduto();
+                    gerenciamentoEstoque.RegistrarSaidaEstoque();
                     break;
                 case "0":
                     Console.WriteLine("Saindo do Sistema...");

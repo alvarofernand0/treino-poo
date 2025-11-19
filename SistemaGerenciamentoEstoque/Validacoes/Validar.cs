@@ -44,12 +44,23 @@ public static class Validar
             return inteiroValidado;
         }
     }
-    public static List<Produto> PercorrerListaProduto(List<Produto> produtos, int idProduto)
+    public static string ValidarIdLista(List<Produto> produtos, int idProduto, string mensagemErro)
     {
         foreach (var produto in produtos)
         {
-            if(produto.Id == idProduto)
-                return idProduto;
+            if (produto.Id == idProduto)
+                return idProduto.ToString();
         }
+        return mensagemErro;
+    }
+    public static void ValidarListagemLista(List<Produto> produtos)
+    {
+        if(produtos.Count >= 1)
+        {
+            foreach (var produto in produtos)
+                Console.WriteLine(produto.ToString()+"\n");
+        }
+        else
+            Console.WriteLine("Não há produtos na Lista!!\n");
     }
 }

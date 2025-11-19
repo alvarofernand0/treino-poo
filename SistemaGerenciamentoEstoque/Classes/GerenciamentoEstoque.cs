@@ -10,7 +10,6 @@ namespace SistemaGerenciamentoEstoque.Classes
         {
             Console.Clear();
             Console.WriteLine("---- Criar Produto ----\n");
-            
             string nomeProduto = Validar.ValidarString("\nDigite o Nome do Produto: ", "\nNão pode ser espaço vazio! Tente novamente: ");
             string descricaoProduto = Validar.ValidarString("\nDigite a descricao do produto", "\nNão pode ser espaço em branco ou vazio: ");
             decimal precoProduto = Validar.ValidarDecimal("\nDigite o Preço do produto\n", "\nPrecisa ser um numero maior que zero: ");
@@ -21,11 +20,7 @@ namespace SistemaGerenciamentoEstoque.Classes
         {
             Console.Clear();
             Console.WriteLine("---- Listar Produtos ----\n");
-            if(produtos.Count >= 1)
-                foreach (var produto in produtos)
-                    Console.WriteLine(produto.ToString()+"\n");
-            else
-                Console.WriteLine("ListaVazia!!");
+            Validar.ValidarListagemLista(produtos);
         }
         public void BuscarProdutoPorId()
         {
@@ -37,7 +32,7 @@ namespace SistemaGerenciamentoEstoque.Classes
                 if (produto.Id == idBuscaProduto)
                 {
                     Console.WriteLine("Produto encontrado!\n");
-                    Console.WriteLine(produto.ToString());
+                    Console.WriteLine(produtos[idBuscaProduto].ToString());
                 }
                 else
                     Console.WriteLine("Id Não encontrado");
@@ -47,11 +42,7 @@ namespace SistemaGerenciamentoEstoque.Classes
         {
             Console.Clear();
             Console.WriteLine("----- Atualizar Produto -----\n");
-            if(produtos.Count >= 1)
-                foreach (var produto in produtos)
-                    Console.WriteLine(produto.ToString()+"\n");
-            else
-                Console.WriteLine("ListaVazia!!");
+            Validar.ValidarListagemLista(produtos);
             int idAtualizarProduto = Validar.ValidarInteiro("\nDigite o id do produto que deseja atualizar:", "Precisa ser um numero maior que zero!\n");
             foreach(var produto in produtos)
             {

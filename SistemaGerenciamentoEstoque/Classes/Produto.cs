@@ -19,5 +19,5 @@ public class Produto
     public void SetPrice(decimal preco) => Preco = preco;
     public void SetQuantidadeEmEstoque(int quantidadeEmEstoque) => QuantidadeEmEstoque = quantidadeEmEstoque;
     public override string ToString() =>
-        $"Id: {Id} | Nome: {Nome} | Descricao: {Descricao} | Preço: {Preco} | QuantidadeEstoque: {QuantidadeEmEstoque}";
+        $"\nId: {Id} | Nome: {Nome} | Descricao: {Descricao} | Preço: {Preco} | QuantidadeEstoque: {QuantidadeEmEstoque}";
 }

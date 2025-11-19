@@ -21,7 +21,7 @@ public class App
             Console.WriteLine("6 - Registrar Entrada de Estoque");
             Console.WriteLine("7 - Registrar Saída de Estoque");
             Console.WriteLine("0 - SAIR");
-            Console.Write("\n\nDigite uma das opções [Apenas numeros de 0 a 7]: ");
+            Console.Write("\nDigite uma das opções [Apenas numeros de 0 a 7]: ");
 
             string opcao = Console.ReadLine();
             switch (opcao)
@@ -56,7 +56,7 @@ public class App
                     Console.WriteLine("Opção Inválida!");
                     break;
             }
-            Console.WriteLine("Digite Algo para retornar ao menu: ");
+            Console.Write("\nDigite Algo para retornar ao menu: ");
             Console.ReadKey();
         }
     }

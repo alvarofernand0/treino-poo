@@ -20,7 +20,7 @@ public static class Validar
     {
         while (true)
         {
-            Console.WriteLine(mensagem);
+            Console.Write(mensagem);
             decimal decimalValidado;
             if(!decimal.TryParse(Console.ReadLine(), out decimalValidado) || decimalValidado <= 0)
             {
@@ -34,7 +34,7 @@ public static class Validar
     {
         while (true)
         {
-            Console.WriteLine(mensagem);
+            Console.Write(mensagem);
             int inteiroValidado;
             if(!int.TryParse(Console.ReadLine(), out inteiroValidado) || inteiroValidado <= 0)
             {
@@ -44,14 +44,22 @@ public static class Validar
             return inteiroValidado;
         }
     }
-    public static string ValidarIdLista(List<Produto> produtos, int idProduto, string mensagemErro)
+    public static void ValidarIdLista(List<Produto> produtos)
     {
-        foreach (var produto in produtos)
+        bool sair = false;
+        while (sair != true)
         {
-            if (produto.Id == idProduto)
-                return idProduto.ToString();
+            int idBuscaProduto = ValidarInteiro("\nDigite o Id do produto para buscar: ", "\nPrecisa ser um numero maior que zero!!\n");
+            var produto = produtos.Find(x => x.Id == idBuscaProduto);
+            if(produto == null)
+            {
+                Console.WriteLine("\nProduto não encontrado!!");
+                continue;
+            }
+            Console.WriteLine("\nProduto encontrado!");
+            Console.WriteLine(produto.ToString());
+            sair = true;
         }
-        return mensagemErro;
     }
     public static void ValidarListagemLista(List<Produto> produtos)
     {
@@ -62,5 +70,26 @@ public static class Validar
         }
         else
             Console.WriteLine("Não há produtos na Lista!!\n");
+    }
+
+    public static void RemoverProdutoLista(List<Produto> produtos)
+    {
+        bool sair = false;
+        while (sair != true)
+        {
+            int idBuscaProduto = ValidarInteiro("\nDigite o Id do produto para buscar: ", "\nPrecisa ser um numero maior que zero!!\n");
+            var produto = produtos.Find(x => x.Id == idBuscaProduto);
+            if(produto == null)
+            {
+                Console.WriteLine("\nProduto não encontrado!!");
+                continue;
+            }
+            Console.WriteLine("\nProduto encontrado!");
+            Console.WriteLine(produto.ToString());
+            produtos.Remove(produto);
+            Thread.Sleep(2000);
+            Console.WriteLine("\nProduto Removido!");
+            sair = true;
+        }
     }
 }

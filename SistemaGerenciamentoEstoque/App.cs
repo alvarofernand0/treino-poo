@@ -1,7 +1,6 @@
 using SistemaGerenciamentoEstoque;
 using SistemaGerenciamentoEstoque.Classes;
 using SistemaGerenciamentoEstoque.Validacoes;
-
 namespace SistemaGerenciamentoEstoque;
 public class App
 {

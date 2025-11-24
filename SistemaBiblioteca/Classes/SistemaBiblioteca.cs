@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using SistemaBiblioteca.Enums;
 namespace SistemaBiblioteca.Classes;
 public class GerenciamentoBiblioteca
@@ -26,6 +27,7 @@ public class GerenciamentoBiblioteca
         }
         else
         {
+            Console.WriteLine("\n----- Listagem de Itens -----");
             foreach(var itemAcervo in itemsAcervo)
             Console.WriteLine(itemAcervo.ToString());
         }
@@ -39,8 +41,12 @@ public class GerenciamentoBiblioteca
         }
         else
         {
+            Console.WriteLine("\n----- Listagem de multas -----");
             foreach (var itemAcervo in itemsAcervo)
-            Console.WriteLine(itemAcervo.CalcularMultaAtraso(diasAtraso));
+            {
+                var tipo = itemAcervo is Revista ? "Revista" : itemAcervo is Jornal ? "Jornal" : "Livro";
+                Console.WriteLine($"\nTipo: {tipo} | Multa: R${itemAcervo.CalcularMultaAtraso(diasAtraso)}");
+            }
         }
     }
 }

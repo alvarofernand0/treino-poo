@@ -33,5 +33,5 @@ public abstract class ItemAcervo : IItemBiblioteca
     public abstract decimal CalcularMultaAtraso(int diasAtraso);
     public abstract int CalcularDiasParaDevolucao();
     public override string ToString() =>
-    $"\n{GetType().Name} | Titulo: {Titulo} | Autor: {Autor} | AnoPublicacao: {AnoPublicacao} | CodigoISBN: {CodigoIsbn} | Dias para devolução: {CalcularDiasParaDevolucao()} | Data Locacao: {DataInicioLocacao:dd/MM/yyyy} | Status: {Status}\n";
+    $"\n{GetType().Name} | Titulo: {Titulo} | Autor: {Autor} | AnoPublicacao: {AnoPublicacao} | CodigoISBN: {CodigoIsbn} | Dias para devolução: {CalcularDiasParaDevolucao()} | Data Locacao: {DataInicioLocacao:dd/MM/yyyy} | Status: {Status}";
 }

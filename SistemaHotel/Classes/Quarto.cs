@@ -1,41 +1,35 @@
 using SistemaHotel.Enums;
 using SistemaHotel.Interfaces;
 namespace SistemaHotel.Classes;
-public class Quarto : IAcomodacao
+public abstract class Quarto : IAcomodacao
 {
     public int NumeroQuarto { get; private set;}
     public int Andar { get; private set;}
     public int CapacidadePessoas { get; private set;}
     public decimal ValorDiariaBase { get; private set;}
     public EStatusQuarto Status { get; private set;} = EStatusQuarto.Livre;
-    public Quarto(int numeroQuarto, int andar, int capacidadePessoas, decimal valorDiariaBase, EStatusQuarto status)
+    public Quarto(int numeroQuarto, int andar, int capacidadePessoas, decimal valorDiariaBase)
     {
         SetNumeroQuarto(numeroQuarto);
         SetAndar(andar);
         SetCapacidadePessoas(capacidadePessoas);
         SetValorDiariaBase(valorDiariaBase);
-        SetStatus(status);
     }
     public void SetNumeroQuarto(int numeroQuarto) => NumeroQuarto = numeroQuarto;
     public void SetAndar(int andar) => Andar = andar;
     public void SetCapacidadePessoas(int capacidadePessoas) => CapacidadePessoas = capacidadePessoas;
     public void SetValorDiariaBase(decimal valorDiariaBase) => ValorDiariaBase = valorDiariaBase;
-    public void SetStatus(EStatusQuarto status) => Status = status; 
-    public decimal CalcularTaxaServico()
+    public void SetStatus(EStatusQuarto status) => Status = status;
+    public abstract decimal CalcularTaxaServico();
+    public abstract decimal CalcularValorTotalHospedagem(int dias);
+    public void RealizarCheckIn()
     {
-        throw new NotImplementedException();
+        SetStatus(EStatusQuarto.Ocupado);
+        Console.WriteLine($"\nCheckIn do quarto {GetType().Name} Realizado!");
     }
-    public virtual decimal CalcularValorTotalHospedagem(int dias)
+    public void RealizarCheckOut()
     {
-        throw new NotImplementedException();
+        SetStatus(EStatusQuarto.Livre);
+        Console.WriteLine($"\nCheckOut do quarto {GetType().Name} Realizado!");
     }
-    public virtual void RealizarCheckIn()
-    {
-        throw new NotImplementedException();
-    }
-    public virtual void RealizarCheckOut()
-    {
-        throw new NotImplementedException();
-    }
-    public virtual void CalcularTaxaServico(decimal diaria) => Console.WriteLine("");
 }

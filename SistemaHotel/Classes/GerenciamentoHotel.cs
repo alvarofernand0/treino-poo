@@ -9,5 +9,4 @@ public class GerenciamentoHotel
         quartos.Add(new SuitePresidencial(703, 4, 4, 359.99m));
         Console.WriteLine("\nQuartos adicionados com sucesso!");
     }
-    
 }

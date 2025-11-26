@@ -129,3 +129,77 @@ Luxo: 15% do valor de uma diária.
 SuitePresidencial: 25% do valor de uma diária + R$ 100,00 fixos.
 
 ToString(): Exibir Quarto, Tipo, Status e Valor Total Simulado para 3 dias.
+
+
+
+# 🛒 O Desafio: Sistema do "Mercado Ponto Certo"
+O cliente quer robustez. Nada de variáveis soltas. Tudo tem que ser validado.
+
+## 1. A Base Sólida (Encapsulamento e Classe Abstrata)
+
+O cliente disse: "Se alguém digitar coisa errada, o sistema avisa". Isso significa que as propriedades não podem aceitar qualquer valor.
+
+Crie a classe abstrata Produto:
+
+Propriedades (com validação):
+
+Nome (string): Não pode ser vazio ou nulo.
+
+Preco (double): Se tentarem colocar valor negativo, deve lançar uma ArgumentException com a mensagem "Preço não pode ser negativo!".
+
+QuantidadeEstoque (int): Se for negativo, lançar exceção.
+
+Construtor: Deve obrigar a passar os dados iniciais.
+
+Método Abstrato: public abstract void ExibirDetalhes(); (Cada filho vai detalhar do seu jeito).
+
+## 2. As Categorias (Herança)
+
+O mercado vende coisas muito diferentes. Organize isso:
+
+Classe Alimento (Herda de Produto):
+
+Propriedade extra: DataValidade (DateTime).
+
+Implemente ExibirDetalhes: Mostre nome, preço, estoque e validade.
+
+Classe Eletronico (Herda de Produto):
+
+Propriedade extra: MesesGarantia (int).
+
+Implemente ExibirDetalhes: Mostre nome, preço, estoque e tempo de garantia.
+
+## 3. O Alerta Inteligente (A Interface)
+
+O cliente disse: "Quero ver quando algo tá acabando". Aqui está o segredo: Um alimento é considerado "acabando" se tiver menos de 10 unidades. Um eletrônico (que é caro e vende menos) é considerado "acabando" se tiver menos de 2 unidades.
+
+Regras diferentes, mesma necessidade. Use Interface.
+
+Crie a interface IEstoqueCritico:
+
+Método: bool PrecisaReposicao(); (Retorna verdadeiro ou falso).
+
+Aplique a Interface:
+
+Faça Alimento assinar esse contrato. No método, retorne true se QuantidadeEstoque < 10.
+
+Faça Eletronico assinar esse contrato. No método, retorne true se QuantidadeEstoque < 2.
+
+## 4. O Sistema Gerenciador (CRUD e Try/Catch)
+No seu Program.cs, o menu deve ser blindado contra erros.
+
+Crie uma List<Produto>.
+
+Opção de Cadastro:
+
+Use um bloco try-catch. Peça os dados ao usuário. Se ele digitar preço negativo ou texto vazio, a classe Produto vai lançar o erro. O catch deve capturar isso e mostrar: "Erro ao cadastrar: [Mensagem do Erro]", sem travar o programa.
+
+Opção de Consulta de Reposição (O teste da Interface):
+
+O cliente quer um relatório "O que preciso comprar?".
+
+Varra a lista de produtos.
+
+Verifique: if (produto is IEstoqueCritico itemCritico)
+
+Se for critico E itemCritico.PrecisaReposicao() for verdadeiro -> Imprima o nome do produto em vermelho (ou com um destaque "*** COMPRAR ***")

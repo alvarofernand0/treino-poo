@@ -15,6 +15,7 @@ namespace SistemaGerenciamentoEstoque.Classes
             decimal precoProduto = Validar.ValidarDecimal("\nDigite o Preço do produto: ", "\nPrecisa ser um numero maior que zero!");
             int quantidadeEmEstoque = Validar.ValidarInteiro("\nDigite a quantidade em estoque: ", "\nPrecisa ser um numero maior que zero!");
             produtos.Add( new Produto(idProduto = ++idIncremento, nomeProduto, descricaoProduto, precoProduto, quantidadeEmEstoque));
+            Console.WriteLine("\nProduto cadastrado!!");
         }
         public void ListarProdutos()
         {

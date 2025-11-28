@@ -5,7 +5,7 @@ public static class Validar
     {
         while (true)
         {
-            Console.WriteLine(mensagem);
+            Console.Write(mensagem);
             string stringValidada = Console.ReadLine();
             if (string.IsNullOrEmpty(stringValidada))
             {
@@ -19,7 +19,7 @@ public static class Validar
     {
         while (true)
         {
-            Console.WriteLine(mensagem);
+            Console.Write(mensagem);
             int inteiroValidado;
             if(!int.TryParse(Console.ReadLine(), out inteiroValidado) || inteiroValidado < 1)
             {
@@ -29,12 +29,11 @@ public static class Validar
             return inteiroValidado;
         }
     }
-
     public static decimal Decimal(string mensagem, string mensagemErro)
     {
         while (true)
         {
-            Console.WriteLine(mensagem);
+            Console.Write(mensagem);
             decimal decimalValidado;
             if(!decimal.TryParse(Console.ReadLine(), out decimalValidado) || decimalValidado < 1)
             {
@@ -42,6 +41,20 @@ public static class Validar
                 continue;
             }
             return decimalValidado;
+        }
+    }
+    public static DateOnly Data(string mensagem, string mensagemErro)
+    {
+        while (true)
+        {
+            Console.Write(mensagem);
+            DateOnly dataValidada;
+            if(!DateOnly.TryParse(Console.ReadLine(), out dataValidada))
+            {
+                Console.WriteLine(mensagemErro);
+                continue;
+            }
+            return dataValidada;
         }
     }
 }

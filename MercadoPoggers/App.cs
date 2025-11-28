@@ -3,23 +3,24 @@ public class App
 {
     public void IniciarSistema()
     {
+        SistemaMercadoPoggers sistemaMercadoPoggers = new SistemaMercadoPoggers();
         while (true)
         {
             Console.Clear();
             Console.WriteLine("######### Sistema Mercado ##########\n");
-            Console.WriteLine("1 - \n");
-            Console.WriteLine("2 - \n");
-            Console.WriteLine("3 - \n");
-            Console.WriteLine("4 - \n");
-            Console.WriteLine("5 - \n");
+            Console.WriteLine("1 - Adicionar Produtos");
+            Console.WriteLine("2 - Listar Produtos");
+            Console.WriteLine("3 - ");
+            Console.WriteLine("4 - ");
+            Console.WriteLine("5 - ");
             Console.WriteLine("0 - SAIR");
-
+            Console.Write("\nDigite uma da opcoes [1, 2, 3, 4, 5, 0]: ");
             string opcao = Console.ReadLine();
             switch (opcao)
             {
-                case "1":
+                case "1": sistemaMercadoPoggers.AdicionarProduto();
                     break;
-                case "2":
+                case "2": sistemaMercadoPoggers.ListarProdutos();
                     break;
                 case "3":
                     break;
@@ -31,14 +32,13 @@ public class App
                     Console.WriteLine("\nSaindo do sistema...");
                     Thread.Sleep(2000);
                     Environment.Exit(0);
-                    break;    
+                    break;
+                default: Console.WriteLine("\nOpção inválida!");
+                    break;
+                
             }
-        }    
-
-
-
-
-
-        
+            Console.Write("\nTecle algo para voltar ao menu: ");
+            Console.ReadKey();
+        }
     }
 }

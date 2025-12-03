@@ -203,3 +203,7 @@ Varra a lista de produtos.
 Verifique: if (produto is IEstoqueCritico itemCritico)
 
 Se for critico E itemCritico.PrecisaReposicao() for verdadeiro -> Imprima o nome do produto em vermelho (ou com um destaque "*** COMPRAR ***")
+
+
+# Sistema E-Commerce
+Criar um sistema de Ecommerce que vende tanto produtos físicos como produtos digitais, produtos físicos tem frete e estoque mínimo, produto digital não tem frete e nem estoque mínimo mas tem tamanho em mb, quero um menu que tenha as 4 operações de um crud e utilizando tudo que a gente sabe de poo

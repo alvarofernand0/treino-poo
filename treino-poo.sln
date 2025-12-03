@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaHotel", "SistemaHote
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercadoPoggers", "MercadoPoggers\MercadoPoggers.csproj", "{DB9ECE50-FFA8-4BB3-9F6D-77C0AE0E76C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce", "ECommerce\ECommerce.csproj", "{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{DB9ECE50-FFA8-4BB3-9F6D-77C0AE0E76C7}.Release|x64.Build.0 = Release|Any CPU
 		{DB9ECE50-FFA8-4BB3-9F6D-77C0AE0E76C7}.Release|x86.ActiveCfg = Release|Any CPU
 		{DB9ECE50-FFA8-4BB3-9F6D-77C0AE0E76C7}.Release|x86.Build.0 = Release|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Debug|x64.Build.0 = Debug|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Debug|x86.Build.0 = Debug|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Release|x64.ActiveCfg = Release|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Release|x64.Build.0 = Release|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Release|x86.ActiveCfg = Release|Any CPU
+		{FB8CB1B1-7CBE-49BF-A1D9-4B7754507B1C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -207,3 +207,45 @@ Se for critico E itemCritico.PrecisaReposicao() for verdadeiro -> Imprima o nome
 
 # Sistema E-Commerce
 Criar um sistema de Ecommerce que vende tanto produtos físicos como produtos digitais, produtos físicos tem frete e estoque mínimo, produto digital não tem frete e nem estoque mínimo mas tem tamanho em mb, quero um menu que tenha as 4 operações de um crud e utilizando tudo que a gente sabe de poo
+
+
+# Desafio A Mochila do Aventureiro (RPG) 🎒⚔️
+Foco: Polimorfismo e Classe Abstrata.
+
+## O Cenário: No seu jogo, o personagem tem uma Mochila que é uma lista de itens. O jogador pode clicar em qualquer item e selecionar a opção "USAR". Porém, "Usar" um item tem efeitos completamente diferentes:
+
+Poção de Vida: Recupera 50 HP.
+
+Pergaminho de Teleporte: Move o personagem para a cidade.
+
+Moeda de Ouro: Não faz nada ao ser usada (apenas exibe "Tlim Tlim").
+
+O Problema: O código da Mochila não pode ter um if (item == "Poção"). Ele precisa tratar tudo como "Item Genérico", mas o efeito tem que ser específico.
+
+
+# Desafio : A Oficina Mecânica (Veículos) 🔧🚗
+Foco: Interface Segregation Principle (ISP) - O "I" do SOLID.
+
+## O Cenário: Você foi contratado por uma oficina que atende todo tipo de transporte. O sistema tem um método RealizarRevisaoCompleta(Veiculo v). O checklist da revisão inclui:
+
+Calibrar Pneus.
+
+Trocar Óleo do Motor.
+
+Limpar Corrente.
+
+O Problema (A Pegadinha):
+
+Chegou um Tesla (Carro Elétrico): Ele tem pneus, mas não tem óleo para trocar.
+
+Chegou uma Bicicleta: Ela tem pneus e corrente, mas não tem motor (sem óleo).
+
+Chegou uma Moto: Tem pneus, óleo e corrente.
+
+Se você criar uma interface gigante IVeiculo com TrocarOleo(), CalibrarPneu() e LimparCorrente(), você vai obrigar o Tesla a implementar TrocarOleo() (o que é um erro grave) e a Bicicleta a ter motor.
+
+Sua Missão: Como você desenha as interfaces para que o mecânico possa pegar um veículo e fazer apenas o que aquele veículo suporta, sem forçar a barra?
+
+Quantas interfaces você criaria?
+
+Quem implementa o quê?
